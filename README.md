@@ -20,8 +20,8 @@ Built using **Pyrogram**, **PyTgCalls**, and **yt-dlp** — without MongoDB, cle
 ### 1. Clone the repo
 
 ```bash
-git clone https://github.com/yourusername/tgvc_music.git
-cd tgvc_music
+git clone https://github.com/SatyamXd-Codex/TGVCMusic
+cd TGVCMusic
 ```
 
 ### 2. Install requirements
@@ -94,8 +94,7 @@ tgvc_music/
 - [Pyrogram](https://github.com/pyrogram/pyrogram)
 - [PyTgCalls](https://github.com/pytgcalls/pytgcalls)
 - [yt-dlp](https://github.com/yt-dlp/yt-dlp)
-- Inspired by Yukki Music and many community open-source bots
-- Bot made with ❤️ by [YourName](https://t.me/YourUsername)
+- Bot made with ❤️ By [Hexor'Xd](https://t.me/Sher_E_Purvanchal)
 
 ---
 
