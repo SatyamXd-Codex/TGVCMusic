@@ -1,103 +1,80 @@
-# 🎧 TGVC Music Bot
+# TGVCMusic Bot
 
-**TGVC Music** is a simple and stable Telegram music bot for streaming high-quality audio in group voice chats.  
-Built using **Pyrogram**, **PyTgCalls**, and **yt-dlp** — without MongoDB, clean and easy to deploy.
+A Telegram Voice Chat Music Bot to play music in voice chats with many features.
 
----
+## Features
 
-## 🚀 Features
+- Play music from YouTube
+- Play music from local files
+- Queue system
+- Control playback (pause, resume, skip)
+- Admin commands
+- Docker support for easy deployment
 
-- 🎵 Play music directly from YouTube in Telegram voice chats
-- 🎚 Simple commands: `/play`, `/pause`, `/resume`, `/stop`
-- 👑 `/broadcast` command for sudo users (send message to all groups)
-- ⚡ Lightweight and fast — no MongoDB or heavy setup required
-- 🛠 Easy to configure with a single `config.py` file
+## Quick Setup Guide
 
----
+### Method 1: Standard Setup
 
-## 🛠️ Installation
+1. Clone the repository
+   ```bash
+   git clone https://github.com/SatyamXd-Codex/TGVCMusic
+   cd TGVCMusic
+   ```
 
-### 1. Clone the repo
+2. Install dependencies
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-```bash
-git clone https://github.com/SatyamXd-Codex/TGVCMusic
-cd TGVCMusic
-```
+3. Run setup script to configure bot
+   ```bash
+   python setup.py
+   ```
 
-### 2. Install requirements
+4. Start the bot
+   ```bash
+   python main.py
+   ```
 
-```bash
-pip install -r requirements.txt
-```
+### Method 2: Docker Setup
 
-### 3. Fill in your config
+1. Clone the repository
+   ```bash
+   git clone https://github.com/SatyamXd-Codex/TGVCMusic
+   cd TGVCMusic
+   ```
 
-Edit the `config.py` file:
+2. Build and run with Docker Compose
+   ```bash
+   docker-compose up -d
+   ```
 
-```python
-API_ID = 123456
-API_HASH = "your_api_hash"
-BOT_TOKEN = "your_bot_token"
-SESSION_STRING = "your_session_string"
-SUDO_USERS = [123456789, 987654321]  # Your Telegram User IDs
-```
+   The bot will automatically run the setup script if no configuration is found.
 
-> 🔐 You can generate `SESSION_STRING` using [Pyrogram String Session Generator](https://docs.pyrogram.org/topics/sessions#string-session)
+## Environment Variables
 
-### 4. Run the bot
+If you prefer not to use the setup script, you can set these environment variables:
 
-```bash
-python3 main.py
-```
+- `API_ID`: Your Telegram API ID
+- `API_HASH`: Your Telegram API Hash
+- `BOT_TOKEN`: Your Telegram Bot Token
+- `SESSION_NAME`: Session name (default: TGVCMusic)
+- `ADMINS`: Comma-separated list of admin usernames or IDs
+- `USE_MONGODB`: Whether to use MongoDB (true/false)
+- `MONGODB_URI`: MongoDB connection URI
+- `DOWNLOAD_PATH`: Path to store downloaded songs
+- `DURATION_LIMIT`: Max song duration in minutes
 
----
+## Commands
 
-## 💬 Bot Commands
+- `/play [song name or YouTube URL]` - Play a song
+- `/pause` - Pause the current playback
+- `/resume` - Resume playback
+- `/skip` - Skip the current song
+- `/stop` - Stop playing and clear the queue
+- `/queue` - Show the current queue
+- `/help` - Show help message
 
-| Command        | Description                          |
-|----------------|--------------------------------------|
-| `/play <name>` | Play a song in group voice chat      |
-| `/pause`       | Pause the current stream             |
-| `/resume`      | Resume paused stream                 |
-| `/stop`        | Leave voice chat and stop playback   |
-| `/broadcast`   | (Sudo Only) Send message to all chats|
+## Contributing
 
----
-
-## 📂 Folder Structure
-
-```
-tgvc_music/
-├── main.py
-├── config.py
-├── requirements.txt
-├── helpers/
-│   └── yt.py
-├── plugins/
-│   ├── play.py
-│   ├── controls.py
-│   └── broadcast.py
-```
-
----
-
-## 📋 Requirements
-
-- Python 3.9 or higher
-- Telegram API credentials from [my.telegram.org](https://my.telegram.org)
-- A Telegram Bot from [@BotFather](https://t.me/BotFather)
-
----
-
-## 👑 Credits
-
-- [Pyrogram](https://github.com/pyrogram/pyrogram)
-- [PyTgCalls](https://github.com/pytgcalls/pytgcalls)
-- [yt-dlp](https://github.com/yt-dlp/yt-dlp)
-- Bot made with ❤️ By [Hexor'Xd](https://t.me/Sher_E_Purvanchal)
-
----
-
-## 📜 License
-
-This project is open-source and free to use under the Apache License.
+Contributions are welcome! Please feel free to submit a Pull Request.

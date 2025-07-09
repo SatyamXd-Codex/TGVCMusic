@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  tgvcmusic:
+    build: .
+    restart: unless-stopped
+    volumes:
+      - ./config.json:/app/config.json
+      - ./downloads:/app/downloads
+    environment:
+      - TZ=UTC
+    # Uncomment and fill these if not using config.json
+    # environment:
+    #   - API_ID=your_api_id
+    #   - API_HASH=your_api_hash
+    #   - BOT_TOKEN=your_bot_token
+    #   - ADMINS=username1,username2
